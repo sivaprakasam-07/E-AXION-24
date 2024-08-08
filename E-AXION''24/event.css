@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #161623;
+    min-height: 100vh;
+}
+
+section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 180vh;
+    background: url("https://wallpapercave.com/wp/aZKICPt.jpg");
+    background-size: cover;
+}
+
+@keyframes animateBg {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+                0 0 0 8px rgba(255, 255, 255, 0.1),
+                0 0 20px rgba(255, 255, 255, 0.1);
+    animation: animate 3s linear infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+span:nth-child(1) {
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+
+span:nth-child(2) {
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+span:nth-child(3) {
+    top: 80px;
+    right: 0;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+span:nth-child(4) {
+    top: 0;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+
+span:nth-child(5) {
+    top: 0;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+
+span:nth-child(6) {
+    top: 0;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+
+span:nth-child(7) {
+    top: 300px;
+    right: 0;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 1.75s;
+}
+
+span:nth-child(8) {
+    top: 0;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+}
+
+span:nth-child(9) {
+    top: 0;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 2.25s;
+}
+
+span:nth-child(10) {
+    top: 0;
+    right: 450px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.75s;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.container .card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, .05);
+    margin: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.container .card .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: .5;
+    transition: .5s;
+}
+
+.container .card:hover .content {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.container .card .content .imgBx {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, .25);
+}
+
+.container .card .content .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .content .contentBx h3 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.container .card .content .contentBx h3 span {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.container .card .sci {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.container .card .sci li {
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: .5s;
+    opacity: 0;
+    transition-delay: calc(.1s * var(--i));
+}
+
+.container .card:hover .sci li {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container .card .sci li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 420px;
+    border: 1px solid #840505a5;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 0 0 20px #0d0612a5;
+    animation: slide-in 1s ease-out forwards;
+}
+
+.logo-img {
+    height: 85px;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    animation: border-pulse 2s infinite;
+}
+
+/* Responsive Styles */
+
+/* Desktop View */
+@media (min-width: 1200px) {
+    /* styles for desktop view */
+    .container {
+      max-width: 1200px;
+      /* margin: 40px auto; */
+      margin-top: 50px;
+    }
+    .card {
+      width: 300px;
+      height: 400px;
+      margin: 20px;
+    }
+    .imgBx {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  /* Tablet View */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    /* styles for tablet view */
+    .container {
+      max-width: 768px;
+      margin: 30px auto;
+      margin-top: 90px;
+    }
+    .card {
+      width: 250px;
+      height: 350px;
+      margin: 15px;
+    }
+    .imgBx {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 767px) {
+    /* styles for mobile view */
+    .container {
+      max-width: 100%;
+      margin: 20px;
+      margin-top: 90px;
+    }
+    .card {
+      width: 100%;
+      height: 300px;
+      margin: 10px;
+    }
+    .imgBx {
+      width: 80px;
+      height: 80px;
+    }
+  }
