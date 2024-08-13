@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-AXION'24</title>
+  <link rel="icon" href="./images/baticon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/js/kinetic.js"></script>
+  <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/jquery.final-countdown.js"></script> -->
+	<meta name="author" content="St. Joseph's Institute of Technology">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Butcherman&family=Eater&family=Nosifer&display=swap');
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px; /* adjust the height according to your needs */
+      background-color: #f0f0f0; /* optional */
+    }
+    .button {
+        width: 450px;
+        height: 140px;
+        background-color: transparent;
+        color: rgb(240, 154, 25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgb(193, 4, 251);
+        transition: box-shadow 0.3s ease-in-out;
+        margin-bottom: 15px;
+    }
+      @media (max-width: 768px) {
+          .button {
+              width: 250px;
+              height: 80px;
+              margin-top: 50px;
+              font-weight: 900;
+          }
+      }
+
+      @media (min-width: 769px) {
+          .button {
+              width: 350px;
+              height: 100px;
+              font-weight: 900;
+              
+          }
+      }
+      /* Basic styles for the menu */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+/* Style for the button */
+.animated-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #220737;
+    border: 2px solid transparent; /* Start with no visible border */
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s, background-color 0.4s;
+}
+
+/* Border animation effect */
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.7px solid #f21df2; /* Border color */
+    transition: transform 0.4s;
+    transform: scaleX(0); /* Start with a border of 0 width */
+    transform-origin: bottom right;
+}
+
+/* When hovering over the button */
+.animated-button:hover::before {
+    transform: scaleX(1); /* Expand the border to full width */
+    transform-origin: bottom left;
+}
+
+/* Change the text color on hover */
+.animated-button:hover {
+    color: #000; /* Text color on hover */
+    background-color: #e7e7e7; /* Background color on hover */
+}
+
+    
+    header img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    #title-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    /* Add this container class */
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #moon {
+        max-width: 100%;
+        height: auto;
+    }
+    .footer-section{
+      background-color: beige;
+      height: 185px;
+      width: 100vw;
+    }
+
+    /* Additional styling for mobile view */
+    @media (max-width: 768px) {
+        #moon {
+          width: 50vh;
+          height: 50vh;
+          margin-top: 150px;
+        }
+    }
+
+    /* Additional styling for desktop view */
+    @media (min-width: 380px) {
+        #moon {
+            width: 60vh;
+            height: 60vh;
+            margin-top: 150px;
+        }
+        #title-image{
+          height: 300px;
+          width: 800px;
+          margin-top: -90px;
+
+        }
+    }
+    .social_icon{
+      text-align: center;
+    }
+
+html,
+body {
+  height: 100%;
+}
+html {
+  
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url(/images/foot.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  font-family: "Raleway", "Arial", sans-serif;
+} 
+.countdown-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.clock-item .inner {
+  height: 0px;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+}
+.clock-canvas {
+  background-color: rgba(201, 31, 31, 0.1);
+  border-radius: 50%;
+  height: 0px;
+  padding-bottom: 100%;
+}
+.text-content {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -50px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  width: 100%;
+}
+.text .val {
+  font-size: 50px;
+}
+.text .type-time {
+  font-size: 20px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .clock-item {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .clock-item {
+    margin: 0px 30px 30px 30px;
+  }
+}
+.timer{
+  background-color: #180a22;
+}
+
+@keyframes border-pulse {
+    0% {
+        box-shadow: 0 0 0 5px beige;
+    }
+    70% {
+        box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.home-img {
+    height: 85px;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    animation: border-pulse 2s infinite;
+  
+}
+
+@media (max-width: 768px) {
+    .home-img {
+      margin-top: 30px;
+        height: 170px;
+        width: 170px;
+        border: 3px solid transparent;
+        border-radius: 8px;
+        animation: border-pulse 2s infinite;
+    }
+}
+@media (min-width: 380px){
+  .home-img{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 170px;
+    width: 170px;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    animation: border-pulse 2s infinite;
+  }
+}
+.animated-button {
+    height: 66.px;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    animation: border-pulse 2s infinite;
+}
+
+</style>
+</head>
+<body>
+  <section class="parallax">
+    <header>
+      <img id="title-image" src="./images/title-removebg-preview (3).png" alt="st.joseph college top">
+    </header>
+    <img src="./images/left-tree.png" id="leftside" alt="Halloween decoration left side" />
+    <img src="./images/right tree.png" id="rightside" alt="Halloween decoration right side" />
+    <div class="image-container">
+      <img src="./images/E-Axion MainLogo FInal.png" id="moon" alt="Halloween moon" />
+    </div>
+    <img src="./images/land-image.png" id="bottom" alt="Halloween bottom decoration" />
+    <img src="./images/left-pumpkin.png" id="leftpumpkin" alt="Halloween left pumpkin" />
+    <img src="./images/right-pumpkin.png" id="rightpumpkin" alt="Halloween right pumpkin" />
+  </section>
+
+  
+
+  <section class="blog">
+    <div class="button d-flex flex-column">
+      <h1 style="font-weight: 900; font-size: 1.2rem;">28th SEPTEMBER 2024</h1>
+      <h4 style="font-weight: 800;">FREE REGISTRATION</h4>
+    </div>
+    
+    <a href="index.html"><img src="./images/pricepool2.jpg" class="home-img ml-4"></a>
+
+    <h3>EVENTS</h3>
+    <!-- Swiper -->
+    <div class="swiper">
+      <div class="parallax-bg" data-swiper-parallax="-23%"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="content">
+              <div class="title" data-content="BRAIN BUSTERS" data-swiper-parallax="-500">BRAIN BUSTERS</div>
+              <div class="text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0">
+                <p style="font-size: 15px;">Brain Busters is an "Ultimate Knowledge Challenge" were the participants are tested in complex electronics puzzles, oral rapid fire and Q-A session. Showcase your expertise and outshine your competitors. 
+                </p>
+              </div>
+            </div>
+            <div class="image" data-swiper-parallax="-200">
+              <img src="./images/SAVE_20240805_090232-01.jpeg" alt="Ghastly Ghost Tours" />
+            </div>
+            <div class="mt-5">
+              <a href="brainbusters.html"><button class="btn btn-danger">View More</button></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <div class="title" data-content="TECHNO HUNT" data-swiper-parallax="-500">TECHNO HUNT</div>
+              <div class="text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0">
+                <p style="font-size: 15px;">Techno Hunt is a "Breath Taking Saga" were your technical prowess and quick thinking are put in action with a rapid fire and a Technical Hunt. Come and find the hidden treasure of success.
+                </p>
+              </div>
+            </div>
+            <div class="image" data-swiper-parallax="-200">
+              <img src="./images/TechnoHunLogot.png" alt="Wicked Costume Contest" />
+            </div>
+            <div class="mt-5">
+              <a href="technohunt.html"><button class="btn btn-danger">View More</button></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <div class="title" data-content="REVERSE HACK MASTERY" data-swiper-parallax="-500">REVERSE HACK MASTERY</div>
+              <div class="text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0">
+                <p style="font-size: 15px;">ReverseHack Mastery "Mind blowing Engineering Hack" were your engineering skills are tested in problem-solving, bug fixing and reverse engineering. Gear up for a hands on bug smashing.
+                </p>
+              </div>
+            </div>
+            <div class="image" data-swiper-parallax="-200">
+              <img src="./images/reversehacklo.jpg" alt="Spooky Dance Floor" />
+            </div>
+            <div class="mt-5">
+              <a href="reversehackmastery.html"><button class="btn btn-danger">View More</button></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <div class="title" data-content="SILICON SAGA" data-swiper-parallax="-500">SILICON SAGA</div>
+                <div class="text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0">
+                  <p style="font-size: 15px;">Silicon Saga " A  Breath Killing Quiz Adventure" were your core knowledge is tested in Q-A session, Advanced electronics crossword and a rapid fire. Sharpen your minds to conquer the adventures quiz saga.</p>
+                </div>
+              </div>
+            <div class="image" data-swiper-parallax="-200">
+              <img src="./images/silicon.jpg" alt="Sinister Snacks" />
+            </div>
+            <div class="mt-5">
+              <a href="siliconsaga.html"><button class="btn btn-danger">View More</button></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <div class="title" data-content="PICK AND MATCH" data-swiper-parallax="-500">PICK AND MATCH</div>
+              <div class="text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0">
+                <p style="font-size: 15px;">Pick and match is a "Electrified Digital Dynamo" were the participates are challenged in electronics test and a digital design challenge. Show off your problem-solving prowess  and demonstrate your digital brilliance.
+                </p>
+              </div>
+            </div>
+            <div class="image" data-swiper-parallax="-200">
+              <img src="./images/Pick and match main.png" alt="Scary Movie Screening" />
+            </div>
+            <div class="mt-5">
+              <a href="pick&match.html"><button class="btn btn-danger">View More</button></div></a>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">General Guidelines</button>
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content" style="background-image: radial-gradient(#ff7c02, #590d68);">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel" style="color: beige;">NORMS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body ml-4">
+                <ul type="disc" style="color: #fff;">
+                  <li class="list-one mb-2">College ID card is mandatory.</li>
+                  <li class="list-one mb-2">Registered students should report to college by 8.30AM.</li>
+                  <li class="list-one mb-2">On-Spot Registration will not be allowed.</li>
+                  <li class="list-one mb-2">Decent dress code should be followed.</li>
+                  <li class="list-one mb-2">Judge's decision will be final and binding.</li>
+                  <li class="list-one mb-2">Participants must arrange their own transport.</li>
+                  <li class="list-one mb-2">Food will be provided (free of cost)
+                    by our college.</li>
+                    <li class="list-one mb-2">Proper decorum must be maintained in 
+                      accordance with the college rules while 
+                      in the College campus.</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <p style="font-size: 17px; color: rgb(230, 230, 216);">
+        Join us for E-AXION, the National Level Symposium hosted by the ECE Department at St. Joseph's Institute of Technology! Explore innovative ideas, and showcase your talents in electronics and communication engineering. Register now to be part of this exceptional academic event!
+      </p>
+      <div class="d-flex flex-row">
+        <div class="button-container">
+          <a href="https://conoscenza2024.stjosephstechnology.ac.in/registration/">
+            <button class="btn">
+              <span style="font-size: 16.5px;">Register Now</span>
+            </button>
+          </a>
+      </div>
+      <div class="button-container-2">
+        <a href="https://www.stjosephstechnology.ac.in/web/ece/inter-department-symposium.php">
+            <button class="btn">
+              <span style="font-size: 16.5px;">ABOUT US</span>
+            </button>
+        </a>
+      </div>
+  </div>
+  </section>
+    <div class="main">
+        <footer class="footer-section">
+            <div class="waves">
+                <!-- <div class="wave" id="wave1">
+                </div> -->
+                <div class="zoom d-flex flex-row justify-content-center">
+                  <div class="social-icon mt-3 mr-3">
+                    <a href="https://www.instagram.com/ece_st_josephs_technology?igsh=cjR2MWQ4NDJmMXpu" ><ion-icon name="logo-instagram" style="color: #3e013f; font-size: 1.7rem;"></ion-icon></a>
+                  </div>
+                  
+                  <div class="social-icon mt-3 mr-3">
+                    <a href="https://www.linkedin.com/in/department-of-ece-st-joseph-s-institute-of-technology-0a62aa212?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" ><ion-icon name="logo-linkedin" style="color: #0d70ce; font-size: 1.7rem;"></ion-icon></a>
+                  </div>
+                </div>
+                <p class="text-center" style="font-size: 1.1rem; color: #220737; font-weight: 600;">For any queries mail to: eaxion24@gmail.com</p>
+                <ul class="menu text-center">
+                    <li><a href="Studentcordinators.html" class="animated-button">Student Co-ordinators</a></li>
+                </ul>
+                
+                <p style="text-align: center; color: #220737; font-size: 13px; font-weight: 700;">Designed & Developed by KAVYA & SIVAPRAKASAM | ⓒ 2024 Copyrights</p>
+            </div>
+        </footer>
+    </div>
+</section>
+    <script src="script.js">
+      const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+</html>

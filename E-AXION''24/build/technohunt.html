@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="technohunt.css">
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Maven+Pro:500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Techno Hunt</title>
+    <link rel="icon" href="./images/zombie.png" type="image/x-icon">
+</head>
+<body>
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Maven+Pro:500' rel='stylesheet' type='text/css'>
+    <a href="index.html"><img src="./images/E_AXION-logo.png" class="home-img ml-4"></a>
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <h1 style="color: rgb(0, 0, 0); text-shadow: 
+        -1px -1px 0 #d8bcb2,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000; font-weight: 900;">TECHNO HUNT</h1>
+        <h3 class="h3-text" style="color: rgb(251, 252, 226); text-shadow: 
+        -1px -1px 0 #d8bcb2,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000; font-weight: 900;"><b>Embark on the Ultimate TECH QUEST: Join the TECHNO HUNT!</b></h3>
+        <h4 class="description-para1" style="color: rgb(251, 252, 226); text-shadow: 
+        -1px -1px 0 #d8bcb2,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000; font-weight: 900;"><b>Description:</b></h4>
+        <p class="description-para" style="text-align: left; color: rgb(251, 252, 226); font-size: 1.3rem; text-shadow: 
+        -1px -1px 0 #d8bcb2,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000; font-weight: 500;">
+            Welcome to TECHNO HUNT, where your technical prowess and quick thinking will be put to the ultimate test! Form your team and dive into an electrifying competition designed to challenge your knowledge and speed.
+        </p>
+    </header>
+
+    <section class="main">
+        <a class="arrow-wrap" href="#content" data-aos="fade-up" data-aos-duration="1000">
+            <span class="arrow"></span>
+        </a>
+        <div class="content" id="content">
+            <div class="guidelines-border" data-aos="fade-up" data-aos-duration="1000">
+                <h1 style="color: black;">Guidelines:</h1>
+                <p class="guide-text" style="color: rgb(54, 46, 7);">
+                    1. Each team must consist of 2 or 3 members.<br>
+                    2. Strict adherence to time limits is required.<br>
+                    3. The competition comprises 2 rounds.<br>
+                    4. The judges decisions are final.
+                </p>
+                <h2 style="color: black;">About the Event:</h2>
+                <p class="guide-text" style="color: rgb(54, 46, 7);">
+                    • <b>Round 1:</b> Rapid Fire Technical-Q&A Teams will face a series of rapid-fire technical questions, with their ranking determined by the number of correct answers they can provide within one minute. Only the top teams will advance to the next round.<br>
+                    • <b>Round 2:</b> Technical Term Hunt-The selected teams will embark on a hunt for technical terms based on given descriptions. Quick thinking and a sharp mind are crucial to succeed in this thrilling round.
+                </p>
+                
+                <div class="mt-5" style="text-align: center;">
+                    <a href="https://conoscenza2024.stjosephstechnology.ac.in/registration/"><button class="btn-register">Register</button></a>
+                </div>
+            </div>
+            <h2 class="final-text">Wonder Awaits!!</h2>
+        </div>
+    </section>
+    <section>
+        <div class="main">
+            <footer class="footer-section">
+                <div class="waves">
+                    <div class="wave" id="wave1">
+                    </div>
+                    <ul class="menu">
+                        <li><a href="Technohunt-team.html" class="animated-button">Team & Contact</a></li>
+                    </ul>
+                    <div class="zoom">
+                        <ul class="social_icon">
+                            <li><a href="https://www.instagram.com/eaxion2024/"><ion-icon class="social_icon-1" style="color: whitesmoke; margin-top: 15px;" name="logo-instagram"></ion-icon></a></li>
+                            <li><a href="https://www.linkedin.com/in/department-of-ece-st-joseph-s-institute-of-technology-0a62aa212?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><ion-icon class="social_icon-3" style="color: whitesmoke; margin-top: 15px;" name="logo-linkedin"></ion-icon></a></li>
+                        </ul>
+                    </div>
+                    
+                    <p>© E-AXION-24||All Right Are Reserved By SJIT</p>
+                </div>
+            </footer>
+        </div>
+</section>
+    <script>
+        // Apply opacity to the arrow
+        $(window).scroll(function(){
+            var topWindow = $(window).scrollTop();
+            var topWindow = topWindow * 1.5;
+            var windowHeight = $(window).height();
+            var position = topWindow / windowHeight;
+            position = 1 - position;
+            $('.arrow-wrap').css('opacity', position);
+        });
+
+        // Smooth scrolling
+        $(function() {
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
